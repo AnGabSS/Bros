@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS public."users"
     created_at timestamp with time zone NOT NULL,
     cpf_cnpj character varying(255) NOT NULL,
     nickname character varying(255) NOT NULL,
+    is_active boolean NOT NULL DEFAULT TRUE,
     PRIMARY KEY (organization_group, company, branch, unit, id),
     CONSTRAINT email_must_to_be_unique UNIQUE (email),
     CONSTRAINT nickname_must_to_unique UNIQUE (nickname)

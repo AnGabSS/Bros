@@ -7,6 +7,7 @@ import br.com.nulog.bros.user.infra.gateways.UserRepositoryGateway;
 import br.com.nulog.bros.user.infra.persistence.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class UserConfig {
@@ -21,8 +22,8 @@ public class UserConfig {
     }
 
     @Bean
-    UserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper) {
-        return new UserRepositoryGateway(userRepository, userEntityMapper);
+    UserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper, PasswordEncoder passwordEncoder) {
+        return new UserRepositoryGateway(userRepository, userEntityMapper, passwordEncoder);
     }
 
     @Bean

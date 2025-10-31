@@ -29,7 +29,8 @@ public record CreateUserRequest(
                 request.password(),
                 LocalDateTime.now(),
                 request.cpfcnpj(),
-                request.nickname()
+                request.nickname(),
+                true
         );
     }
 }

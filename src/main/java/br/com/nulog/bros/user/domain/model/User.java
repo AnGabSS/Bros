@@ -14,6 +14,7 @@ public record User (
         String password,
         LocalDateTime createdAt,
         String cpfcnpj,
-        String nickname
+        String nickname,
+        boolean isActive
 ){
 }

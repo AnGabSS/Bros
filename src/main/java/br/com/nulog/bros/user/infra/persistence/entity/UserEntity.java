@@ -57,4 +57,7 @@ public class UserEntity {
 
     @Column(name = "nickname")
     private String nickname;
+
+    @Column(name = "is_active")
+    private boolean isActive;
 }

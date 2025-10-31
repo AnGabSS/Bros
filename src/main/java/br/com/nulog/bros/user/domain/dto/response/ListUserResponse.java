@@ -3,7 +3,6 @@ package br.com.nulog.bros.user.domain.dto.response;
 import br.com.nulog.bros.user.domain.model.User;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public record ListUserResponse (
         int organizationGroup,

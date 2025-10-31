@@ -1,0 +1,4 @@
+bros:
+  secret_key: ${JWT_SECRET_KEY}
+  jwt_issuer: ${JWT_ISSUER}
+  front_url: ${FRONT_URL}

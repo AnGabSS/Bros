@@ -16,3 +16,4 @@ spring:
     locations: classpath:db/migration
   profiles:
     active: dev
+

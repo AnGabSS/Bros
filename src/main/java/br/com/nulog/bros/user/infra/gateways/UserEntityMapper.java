@@ -17,6 +17,7 @@ public class UserEntityMapper {
                 .nickname(userDomainObj.nickname())
                 .organizationGroup(userDomainObj.organizationGroup())
                 .password(userDomainObj.password())
+                .isActive(userDomainObj.isActive())
                 .build();
     }
 
@@ -32,7 +33,8 @@ public class UserEntityMapper {
                     entity.getPassword(),
                     entity.getCreatedAt(),
                     entity.getCpfcnpj(),
-                    entity.getNickname()
+                    entity.getNickname(),
+                    entity.isActive()
             );
     }
 
