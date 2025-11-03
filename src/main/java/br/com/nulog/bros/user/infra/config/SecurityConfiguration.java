@@ -1,7 +1,8 @@
-package br.com.nulog.bros.shared.config.security;
+package br.com.nulog.bros.user.infra.config;
 
 import br.com.nulog.bros.shared.config.BrosConfiguration;
-import br.com.nulog.bros.shared.config.security.service.CustomUserDetailsService;
+import br.com.nulog.bros.user.infra.service.CustomUserDetailsService;
+import br.com.nulog.bros.user.infra.service.JwtTokenService;
 import br.com.nulog.bros.user.infra.persistence.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package br.com.nulog.bros.shared.config.security;
+package br.com.nulog.bros.user.infra.service;
 
 import br.com.nulog.bros.shared.config.BrosConfiguration;
 import br.com.nulog.bros.user.domain.model.User;

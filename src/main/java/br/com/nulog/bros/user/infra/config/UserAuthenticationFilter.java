@@ -1,6 +1,7 @@
-package br.com.nulog.bros.shared.config.security;
+package br.com.nulog.bros.user.infra.config;
 
 
+import br.com.nulog.bros.user.infra.service.JwtTokenService;
 import br.com.nulog.bros.user.infra.persistence.entity.UserEntity;
 import br.com.nulog.bros.user.infra.persistence.repository.UserRepository;
 import com.auth0.jwt.exceptions.JWTVerificationException;
