@@ -2,18 +2,12 @@ package br.com.nulog.bros.main;
 
 import br.com.nulog.bros.shared.config.BrosConfiguration;
 import br.com.nulog.bros.user.application.gateways.IUserGateway;
-import br.com.nulog.bros.user.application.usecases.CreateUserUseCase;
-import br.com.nulog.bros.user.application.usecases.ListUsersUseCase;
-import br.com.nulog.bros.user.application.usecases.LoadUserByNicknameUseCase;
+import br.com.nulog.bros.user.application.usecases.*;
 import br.com.nulog.bros.user.infra.config.SecurityConfiguration;
-import br.com.nulog.bros.user.infra.gateways.UserEntityMapper;
-import br.com.nulog.bros.user.infra.gateways.UserGatewayImpl;
+import br.com.nulog.bros.user.infra.gateways.*;
 import br.com.nulog.bros.user.infra.persistence.repository.UserRepository;
 import br.com.nulog.bros.user.application.gateways.IAuthenticationGateway;
 import br.com.nulog.bros.user.application.gateways.ITokenGateway;
-import br.com.nulog.bros.user.application.usecases.LoginUseCase;
-import br.com.nulog.bros.user.infra.gateways.AuthenticationGatewayImpl;
-import br.com.nulog.bros.user.infra.gateways.TokenGatewayImpl;
 import br.com.nulog.bros.user.infra.service.JwtTokenService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,13 +29,18 @@ public class UserConfig {
     }
 
     @Bean
-    IUserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper, PasswordEncoder passwordEncoder) {
-        return new UserGatewayImpl(userRepository, userEntityMapper, passwordEncoder);
+    IUserGateway userGateway(UserRepository userRepository, UserEntityMapper userEntityMapper, PasswordEncoder passwordEncoder, UserEntityIdMapper userEntityIdMapper) {
+        return new UserGatewayImpl(userRepository, userEntityMapper,userEntityIdMapper, passwordEncoder);
     }
 
     @Bean
     UserEntityMapper userEntityMapper() {
         return new UserEntityMapper();
+    }
+
+    @Bean
+    UserEntityIdMapper userEntityIdMapper(){
+        return new UserEntityIdMapper();
     }
 
     @Bean
@@ -55,6 +54,21 @@ public class UserConfig {
     @Bean
     LoadUserByNicknameUseCase loadUserByEmailUseCase(IUserGateway userGateway) {
         return new LoadUserByNicknameUseCase(userGateway);
+    }
+
+    @Bean
+    UpdateUserUseCase updateUserUseCase(IUserGateway userGateway){
+        return new UpdateUserUseCase(userGateway);
+    }
+
+    @Bean
+    InactivateUserUseCase deleteUserUseCase(IUserGateway userGateway){
+        return new InactivateUserUseCase(userGateway);
+    }
+
+    @Bean
+    FindUserByIdUseCase findUserByIdUseCase(IUserGateway userGateway){
+        return new FindUserByIdUseCase(userGateway);
     }
 
     @Bean

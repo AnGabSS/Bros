@@ -5,6 +5,7 @@ public record PageParams(
         int page,
         int size,
         String orderBy,
-        String direction
+        String direction,
+        boolean isActive
 ) {
 }

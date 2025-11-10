@@ -3,12 +3,14 @@ package br.com.nulog.bros.user.domain.dto.response;
 import br.com.nulog.bros.user.domain.model.User;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public record ListUserResponse (
         int organizationGroup,
         int company,
         int branch,
         int unit,
+        UUID id,
         String name,
         String email,
         LocalDateTime createdAt,
@@ -21,6 +23,7 @@ public static ListUserResponse fromUser(User user){
             user.company(),
             user.branch(),
             user.unit(),
+            user.id(),
             user.name(),
             user.email(),
             user.createdAt(),
