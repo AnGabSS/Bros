@@ -1,4 +1,4 @@
-package br.com.nulog.bros.employee.domain.dto;
+package br.com.nulog.bros.employee.domain.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,13 +11,13 @@ public record Employee (
         int unit,
         UUID id,
         String cpfcnpj,
+        EmployeeType type,
+        String driverLicense,
         String name,
         String email,
         LocalDateTime createdAt,
         LocalDate entranceAt,
-        LocalDate exitAt,
-        boolean isActive
-
+        LocalDate exitAt
 ){
 
 }

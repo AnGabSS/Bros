@@ -17,23 +17,6 @@ public record UpdateEmployeeRequest(
         String driverLicense,
         String name,
         String email,
-        LocalDate entranceAt) {
-    public static Employee toEmployee(UpdateEmployeeRequest request){
-        return new Employee(
-                request.organizationGroup(),
-                request.company(),
-                request.branch(),
-                request.unit(),
-                UUID.randomUUID(),
-                request.cpfcnpj(),
-                request.type(),
-                request.driverLicense(),
-                request.name(),
-                request.email(),
-                LocalDateTime.now(),
-                request.entranceAt(),
-                null
-        );
-    }
-
+        LocalDate entranceAt,
+        LocalDate exitAt) {
 }

@@ -1,4 +1,4 @@
-package br.com.nulog.bros.employee.domain.dto;
+package br.com.nulog.bros.employee.domain.model;
 
 
 import java.util.UUID;
