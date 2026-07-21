@@ -1,0 +1,15 @@
+.git
+.gitignore
+.gitattributes
+.idea
+*.iml
+build/
+.gradle/
+out/
+bin/
+HELP.md
+.env
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md
